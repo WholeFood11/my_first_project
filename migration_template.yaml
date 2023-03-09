@@ -1,0 +1,45 @@
+AWSTemplateFormatVersion: 2010-09-09
+Metadata:
+  'AWS::CloudFormation::Designer':
+    a13d73f5-dbec-4806-b8cf-40e058568520:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 319
+        'y': 99
+      z: 0
+Resources:
+  WholefoodsStackDemo:
+    Type: 'AWS::S3::Bucket'
+    Properties:
+      AccessControl: PublicRead
+      CorsConfiguration:
+        CorsRules:
+          - AllowedHeaders:
+              - '*'
+            AllowedMethods:
+              - GET
+            AllowedOrigins:
+              - '*'
+            ExposedHeaders:
+              - Date
+            Id: myCORSRuleId1
+            MaxAge: 3600
+          - AllowedHeaders:
+              - x-amz-*
+            AllowedMethods:
+              - DELETE
+            AllowedOrigins:
+              - 'http://www.example.com'
+              - 'http://www.example.net'
+            ExposedHeaders:
+              - Connection
+              - Server
+              - Date
+            Id: myCORSRuleId2
+            MaxAge: 1800
+    
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: a13d73f5-dbec-4806-b8cf-40e058568520 

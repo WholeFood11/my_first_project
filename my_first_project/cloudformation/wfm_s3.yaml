@@ -1,0 +1,18 @@
+AWSTemplateFormatVersion: 2010-09-09
+Metadata:
+  'AWS::CloudFormation::Designer':
+    a13d73f5-dbec-4806-b8cf-40e058568520:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 319
+        'y': 99
+      z: 0
+Resources:
+  WholefoodsStackDemo:
+    Type: 'AWS::S3::Bucket'
+    Properties: {}
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: a13d73f5-dbec-4806-b8cf-40e058568520
