@@ -4,7 +4,7 @@ import os
 import aws_cdk as cdk
 from aws_cdk.pipelines import CodePipeline, CodePipelineSource, ShellStep
 from my_first_project.my_first_project_stack import MyFirstProjectStack
-
+from my_first_project.my_pipeline_stack import MyPipelineStack
 
 app = cdk.App()
 MyFirstProjectStack(app, "WFM-S3",
@@ -25,7 +25,7 @@ MyFirstProjectStack(app, "WFM-S3",
     # For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html
     )
 
-MyFirstProjectStack(app, "MyPipelineStack", 
+MyPipelineStack(app, "MyPipelineStack", 
     env=cdk.Environment(account='054548226963', region='us-east-2')
 )
 

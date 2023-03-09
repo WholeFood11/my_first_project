@@ -12,7 +12,9 @@ Metadata:
 Resources:
   WholefoodsStackDemo:
     Type: 'AWS::S3::Bucket'
-    Properties: {}
+    Properties: {
+      BucketName : wfm-testing
+    }
     Metadata:
       'AWS::CloudFormation::Designer':
         id: a13d73f5-dbec-4806-b8cf-40e058568520

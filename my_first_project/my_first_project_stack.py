@@ -6,6 +6,8 @@ from aws_cdk import (
 from aws_cdk import cloudformation_include as cfn_inc
 from constructs import Construct
 #from aws_cdk import Stack
+from aws_cdk.pipelines import CodePipeline, CodePipelineSource, ShellStep
+
 
 class MyFirstProjectStack(Stack):
 
@@ -14,6 +16,8 @@ class MyFirstProjectStack(Stack):
 
         template = cfn_inc.CfnInclude(self, "Template",  
             template_file="migration_template.yaml")
+        
+        
 
         # The code that defines your stack goes here
 
