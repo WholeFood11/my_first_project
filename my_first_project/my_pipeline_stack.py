@@ -18,10 +18,10 @@ class MyPipelineStack(cdk.Stack):
                                 "cdk synth"]
                         )
                     )
-        pipeline.add_stage(MyPipelineAppStage(self, "test",
+        pipeline.add_stage(MyPipelineAppStage(self, "Beta",
             env=cdk.Environment(account='054548226963', region='us-east-2')))
         
-        testing_stage = pipeline.add_stage(MyPipelineAppStage(self, "testing",
+        testing_stage = pipeline.add_stage(MyPipelineAppStage(self, "Testing",
         env=cdk.Environment(account='054548226963', region='us-east-2')))
 
-        testing_stage.add_post(ManualApprovalStep('approval'))
+        testing_stage.add_post(ManualApprovalStep('Please review and provide approval'))
