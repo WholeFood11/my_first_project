@@ -18,6 +18,7 @@ class MyPipelineStack(cdk.Stack):
                                 "cdk synth"]
                         )
                     )
+        
         pipeline.add_stage(MyPipelineAppStage(self, "Beta",
             env=cdk.Environment(account='054548226963', region='us-east-2')))
         
@@ -25,3 +26,15 @@ class MyPipelineStack(cdk.Stack):
         env=cdk.Environment(account='054548226963', region='us-east-2')))
 
         testing_stage.add_post(ManualApprovalStep('Please review and provide approval'))
+        
+        europe_wave = pipeline.add_wave("Europe")
+        europe_wave.add_stage(MyPipelineAppStage(self, "Ireland",
+            env=cdk.Environment(account='054548226963',region="eu-west-1")
+        ))
+        europe_wave.add_stage(MyPipelineAppStage(self, "Germany",
+            env=cdk.Environment(account='054548226963',region="eu-central-1")
+        ))
+
+        
+
+        
