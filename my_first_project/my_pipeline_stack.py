@@ -31,8 +31,8 @@ class MyPipelineStack(cdk.Stack):
         europe_wave.add_stage(MyPipelineAppStage(self, "Ireland",
             env=cdk.Environment(account='054548226963',region="eu-west-1")
         ))
-        europe_wave.add_stage(MyPipelineAppStage(self, "Germany",
-            env=cdk.Environment(account='054548226963',region="eu-central-1")
+        europe_wave.add_stage(MyPipelineAppStage(self, "Paris",
+            env=cdk.Environment(account='054548226963',region="eu-west-3")
         ))
 
         
